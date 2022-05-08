@@ -3,6 +3,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "dev:host": "export NODE_TLS_REJECT_UNAUTHORIZED=0 && nuxt --env.NODE_TLS_REJECT_UNAUTHORIZED=0 && nuxt dev --hostname 'wajitech.fr' --port 3002",
     "generate": "nuxt generate",
     "preview": "nuxt preview"
   },
@@ -14,6 +15,7 @@
     "bootstrap": "^5.1.3",
     "firebase": "^9.7.0",
     "fs": "^0.0.1-security",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "unenv": "^0.5.1"
   }
 }
