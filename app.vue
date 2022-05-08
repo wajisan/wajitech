@@ -26,7 +26,7 @@ export default {
         content: 'my website description'
       }*/
     ],
-    link: [{ rel: 'icon', type: 'image/png', href: '/assets/img/logo.png' }]
+    link: [{ rel: 'icon', type: 'image/png', href: '~/assets/img/logo.png' }]
     };
   },
   mounted() {
