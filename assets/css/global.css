@@ -1,0 +1,141 @@
+:root {
+    --waji-first-color: #6c2523;
+    --waji-second-color: #fffaf4;
+    --waji-third-color: #1c4a38;
+    --waji-fourth-color: #ffffff;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Satoshi";
+    src: url(~/assets/fonts/Satoshi-Regular.otf) format("opentype")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "ND";
+    src: url(~/assets/fonts/noe-display-regular.ttf) format("truetype")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "ND Bold";
+    src: url(~/assets/fonts/noe-display-bold.ttf) format("truetype")
+}
+
+html, body {
+    width: calc(100vw - 10px);
+    height: -webkit-fill-available;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Satoshi";
+    margin: 0;
+    scroll-behavior: smooth;
+    font-size: calc(1vw + 11.71px) !important;
+}
+
+.section-s1, .section-s2, .section-s3 {
+    min-height: 100vh;
+    height: 100%;
+    width: auto;
+    margin: auto;
+    position: relative;
+}
+
+.section-s1 {
+    background-color: var(--waji-second-color);
+    color: var(--waji-first-color);
+}
+
+.section-s2 {
+    background-color: var(--waji-third-color);
+    color: var(--waji-fourth-color);
+}
+
+.section-s3 {
+    background-color: var(--waji-first-color);
+    color: var(--waji-fourth-color);
+}
+
+.main-title {
+    font-family: "ND Bold";
+    margin: 0;
+    font-size: calc(4vw + 11.71px);
+    line-height: calc(4vw + 11.71px);
+}
+
+::selection {
+    background: var(--waji-third-color);
+    color: white;
+}
+
+.section-s2 ::selection, .home-title ::selection, .sub-title::selection {
+    background: var(--waji-first-color);
+    color: white;
+}
+
+.hide {
+    opacity: 0;
+    transform: translateY(20vh);
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 0.9s ease-out;
+    will-change: opacity, visibility;
+}
+
+.show {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: var(--waji-third-color) transparent;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--waji-third-color);
+    border-radius: 0px;
+    border: 2px solid transparent;
+}
+
+a {
+    line-height: 19px;
+    display: inline;
+    color: inherit !important;
+    font-weight: bold;
+    text-decoration: none;
+    font-style: italic;
+}
+
+a:hover {
+    text-decoration: none !important 
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+    .flex-container {
+        flex-direction: column;
+    }
+}
