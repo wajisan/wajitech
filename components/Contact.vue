@@ -4,7 +4,7 @@
         <div class="main-title col-xs-12 col-md-6">Keep in touch</div>
       </div>
       <div class="d-grid pt-5 pb-5 ps-5 pe-5 col-md-12" style="top:0px; right:0px">
-        <div class="col-xs-12 col-md-12 text-end" v-on:click="showIt()" v-if="!showButton"><span class="show-button">Secret email</span></div>
+        <div class="col-xs-12 col-md-12 text-end" v-if="!showButton"><span class="show-button"  v-on:click="showIt()">Secrets email</span></div>
         <div class="col-xs-12 col-md-12 text-end" v-if="showButton"><a class="show-message" v-bind:href="'mailto:' + message">{{message}}</a></div>
       </div>
       <div class="d-grid pt-5 pb-5 ps-5 pe-5 col-md-12 text-end"><a target="_blank" href="https://twitter.com/wajitech">Twitter</a></div>
@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import observerr from '~/plugins/show-hide.client';
 export default {
     data() {
         return {
@@ -23,8 +22,12 @@ export default {
     },
     methods : {
       showIt() {
+        console.log('SHOW');
         this.showButton = true;
       }
+    },
+    mounted() {
+      console.log('okkk');
     }
 }
 </script>
