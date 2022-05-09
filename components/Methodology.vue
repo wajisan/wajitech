@@ -1,11 +1,11 @@
 <template>
-  <div class="section-s3" id="methodology" @scroll.passive="handleScroll">
+  <div class="section-s3" id="methodology">
     <div class="d-grid pb-5 ps-5 pe-5 pt-5">
-      <div class="main-title col-xs-12 col-md-8 hide">La formule magique</div>
+      <div class="main-title col-xs-12 col-md-8">La formule magique</div>
     </div>
     <div class="d-grid pb-5 ps-5 pe-5 ">
-      <div class="col-xs-12 col-md-8 pb-5 hide">Nous pouvons décrire notre méthode de travail en trois points clés.</div>
-      <div class="row pt-5 row pt-5 col-md-10 m-auto hide">
+      <div class="col-xs-12 col-md-8 pb-5">Nous pouvons décrire notre méthode de travail en trois points clés.</div>
+      <div class="row pt-5 row pt-5 col-md-10 m-auto">
         <div class="col-xs-12 col-md-4 pb-5 ps-3 pe-3">
           <div class="col-xs-12 sub-title">s’immerger</div>
           <span class="sub-def">
@@ -27,13 +27,12 @@
           </span>
         </div>
       </div>
-      <div class="col-xs-12 col-md-10 mr-1 pt-5 text-end m-auto hide">Un quatrième en bonus juste ici : <a href="#learn">informer</a></div>
+      <div class="col-xs-12 col-md-10 mr-1 pt-5 text-end m-auto">Un quatrième en bonus juste ici : <a href="#learn">informer</a></div>
     </div>
   </div>
 </template>
 
 <script>
-import observerr from '~/plugins/show-hide.client';
 
 export default {
     data() {
@@ -41,12 +40,9 @@ export default {
         }
     },
     mounted() {
-      window.addEventListener('scroll', this.handleScroll);
     },
     methods: {
-      handleScroll (e) {
-        observerr('methodo');
-      }      
+     
     },
 }
 </script>
