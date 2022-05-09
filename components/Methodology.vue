@@ -1,5 +1,6 @@
 <template>
   <div class="section-s3" id="methodology">
+    <div class="pt-2 pb-2"></div>
     <div class="d-grid pb-5 ps-5 pe-5 pt-5">
       <div class="main-title col-xs-12 col-md-8">La formule magique</div>
     </div>
@@ -29,6 +30,7 @@
       </div>
       <div class="col-xs-12 col-md-10 mr-1 pt-5 text-end m-auto">Un quatrième en bonus juste ici : <a href="#learn">informer</a></div>
     </div>
+    <div class="pt-2 pb-2"></div>
   </div>
 </template>
 
