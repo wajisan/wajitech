@@ -12,7 +12,7 @@
 <style>
 </style>
 
-<script>
+<script type="module">
 
 import imageFav from '~/assets/favicon.png';
 export default {
@@ -33,7 +33,6 @@ export default {
   },
   mounted() {
     scroll(0,0);
-    console.log("okkk");
   },
   
 }

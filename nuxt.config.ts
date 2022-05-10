@@ -3,9 +3,16 @@ import fs from 'fs';
 
 process.env.PORT = "3002";
 export default {
-    target: 'static',
-    router: { base: '' },
+    //target: 'static',
+    //router: { base: '' },
+    build: {
+      standalone: true 
+    },
+    bridge: false,
     head : {
+      script : {
+        type: "text/javascript"
+      },
       link: [
         { rel: 'icon', type: 'image/png', href: '~/assets/favicon.png' },
       ]

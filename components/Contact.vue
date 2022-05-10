@@ -22,12 +22,10 @@ export default {
     },
     methods : {
       showIt() {
-        console.log('SHOW');
         this.showButton = true;
       }
     },
     mounted() {
-      console.log('okkk');
     }
 }
 </script>

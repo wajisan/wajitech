@@ -38,5 +38,7 @@ export default {
     color: var(--waji-fourth-color);
     font-size: calc(4vw + 11.71px);
     font-family: "Nd Bold";
+    line-height: calc(4vw + 11.71px);
+    padding: calc(2vw + 1px) 0px;
 }
 </style>
