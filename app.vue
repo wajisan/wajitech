@@ -1,11 +1,11 @@
 <template>
   <div>
-    <Home />
-    <Methodology />
-    <Learn />
-    <Skills />
-    <Profil />
-    <Contact />
+    <Home :lang="lang" @updateLang="updateLang" />
+    <Methodology :lang="lang" />
+    <Learn :lang="lang" />
+    <Skills :lang="lang" />
+    <Profil :lang="lang" />
+    <Contact :lang="lang" />
   </div>
 </template>
 
@@ -18,7 +18,7 @@ import imageFav from '~/assets/favicon.png';
 export default {
   head() {
     return {
-      //title: "Wajitech",
+      title: "Wajitech",
       meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -31,9 +31,20 @@ export default {
       link: [{ rel: 'icon', type: 'image/png', href: imageFav }],
     };
   },
-  mounted() {
-    scroll(0,0);
+  data() {
+    return{
+      lang: 'FR'
+    }
   },
+  mounted() {
+    //scroll(0,0);
+    //this.$on('update-lang', () => { console.log('LANG CHANGGGED') });
+  },
+  methods: {
+    updateLang(e) {
+      this.lang = (this.lang == 'FR') ? 'EN' : 'FR';
+    }
+  }
   
 }
 </script>
