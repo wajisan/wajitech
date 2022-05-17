@@ -27,7 +27,7 @@ export default {
           content: {
             'FR' : {
               title: 'Développons vos idées.',
-              content1: 'Mon nom est Kihel wadi et j’ai créer mon studio digital Wajitech pour aider mes clients à faire évoluer leur entreprise. Le monde de l’informatique a un potentielle extraordinaire et tout le monde devrait pouvoir en profiter. Grâce à notre ',
+              content1: 'Mon nom est Kihel wadi et j’ai créé mon studio digital Wajitech pour aider mes clients à faire évoluer leur entreprise. Le monde de l’informatique a un potentiel extraordinaire et tout le monde devrait pouvoir en profiter. Grâce à notre ',
               content2: 'méthodologie',
               content3: ', vous pourrez régler des problèmes récurrents, automatiser des tâches redondantes, améliorer vos solutions actuelles ou en créer de nouvelles.',
             },

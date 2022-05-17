@@ -15,7 +15,7 @@
 
         <div class="pt-5 container d-inline align-items-center">
           <div class="box text-center fw-bold">Backend</div>
-          <div class="box text-center">NodeJS, Java, Apex, C++, C, Python, PHP, QT, API REST</div>
+          <div class="box text-center">NodeJS, Java, Apex, C++, C#, C, Python, PHP, QT, API REST</div>
         </div>
 
         <div class="pt-5 container d-inline align-items-center">
