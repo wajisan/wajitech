@@ -4,11 +4,11 @@ Site vitrine statique (accueil + mentions légales). React + TypeScript **au bui
 les pages sont pré-rendues en HTML, le navigateur reçoit du HTML + CSS inliné et ~1 Ko de JS (menu mobile).
 
 ```bash
-npm install
-npm run dev        # développement
-npm run build      # génère dist/
-npm run preview    # teste dist/
-npm run typecheck
+bun install
+bun run dev        # développement
+bun run build      # génère dist/
+bun run preview    # teste dist/
+bun run typecheck
 ```
 
 ## Modifier le contenu
@@ -30,5 +30,13 @@ Polices auto-hébergées (latin, woff2, 2 préchargées), images WebP, CSS inlin
 animations 100 % CSS (désactivées avec `prefers-reduced-motion`).
 
 ## Déploiement
-Servir `dist/`. `/mentions-legales` correspond à `dist/mentions-legales/index.html` : le serveur doit servir
-les index de dossier (par défaut sur nginx/Coolify static).
+Le `Dockerfile` construit le site avec Bun (`bun run build`) puis sert `dist/` avec nginx (port 80).
+`nginx.conf` gère `/mentions-legales` → `dist/mentions-legales/index.html`.
+
+```bash
+docker compose up --build   # http://localhost:8080
+```
+
+Sans compose : `docker build -t wajitech . && docker run --rm -p 8080:80 wajitech`.
+
+**Coolify** : nouvelle ressource → dépôt Git → Build Pack « Dockerfile », port exposé `80`, domaine `wajitech.fr`.
