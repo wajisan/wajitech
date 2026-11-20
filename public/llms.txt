@@ -1,0 +1,10 @@
+# Wajitech
+
+> Wajitech est l'EURL d'un développeur full stack et responsable de pilotage technique freelance, basé à Paris et disponible en remote. Plus de 10 ans d'expérience (depuis septembre 2016). Formats : renfort d'équipe, encadrement, audit et conseil (dont optimisation des dépenses IT : serveurs, applications, tokens IA), formation. Travail en direct ou via ESN (référencé chez Comet, Crème de la Crème, Le Hibou, Talent.io, Easy Partner, Klanik). Références : L'Oréal, Free, Qobuz, AP-HP, MAAF, Lilo, Groupe Accelis, Fokal Studio. Diplômé d'EPITECH et de Beijing Jiaotong University. Stack : React, TypeScript, Vite, Bun, Node.js. Disponibilité à partir de 2028 (contacter quand même pour une orientation).
+
+## Pages
+- [Accueil](https://wajitech.fr/): positionnement, références, formats de mission, méthode de démarrage, FAQ, contact
+- [Mentions légales](https://wajitech.fr/mentions-legales): éditeur, hébergement, données personnelles
+
+## Contact
+L'adresse email est volontairement masquée contre le spam : elle s'affiche au clic sur le bouton « Faire apparaître l'email » de la section Contact de https://wajitech.fr/#contact. LinkedIn est aussi disponible depuis cette section.
