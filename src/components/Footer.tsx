@@ -1,3 +1,4 @@
+import { ExternalIcon } from './ExternalIcon';
 import { Logo } from './Logo';
 import { MailReveal } from './MailReveal';
 import { site } from '../content/site';
@@ -11,7 +12,7 @@ export function Footer() {
           <span className="mono">{site.legalLine}</span>
         </div>
         <div className="footer-links">
-          <a className="foot-link" href={site.linkedin}>LinkedIn</a>
+          <a className="foot-link" href={site.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn<ExternalIcon /><span className="sr-only"> (s'ouvre dans un nouvel onglet)</span></a>
           <MailReveal className="foot-link" label="Afficher l'email" />
           <a className="foot-link" href="/mentions-legales">Mentions légales</a>
         </div>

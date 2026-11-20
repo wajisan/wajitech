@@ -4,6 +4,7 @@ import { Footer } from '../components/Footer';
 import { Decor } from '../components/Img';
 import { withPlaceholders } from '../components/Ph';
 import { MailReveal } from '../components/MailReveal';
+import { ExternalIcon } from '../components/ExternalIcon';
 import { site, experienceYears } from '../content/site';
 import * as c from '../content/home';
 
@@ -288,7 +289,7 @@ function Contact() {
             <h2 className="disp h-contact">{k.title[0]}<br /><span className="acc">{k.title[1]}</span></h2>
             <div className="contact-ctas">
               <MailReveal className="btn btn-fill btn-lg" label={k.mailCta} />
-              <a className="btn btn-ghost-light btn-lg btn-linkedin" href={site.linkedin}><span className="in" aria-hidden="true">in</span>{k.linkedinCta}</a>
+              <a className="btn btn-ghost-light btn-lg btn-linkedin" href={site.linkedin} target="_blank" rel="noopener noreferrer"><span className="in" aria-hidden="true">in</span>{k.linkedinCta}<ExternalIcon /><span className="sr-only"> (s'ouvre dans un nouvel onglet)</span></a>
             </div>
             <p className="mono small">{k.line}</p>
           </div>
