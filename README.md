@@ -34,9 +34,9 @@ Le `Dockerfile` construit le site avec Bun (`bun run build`) puis sert `dist/` a
 `nginx.conf` gère `/mentions-legales` → `dist/mentions-legales/index.html`.
 
 ```bash
-docker compose up --build   # http://localhost:8080
+docker compose up --build   # http://localhost:3080
 ```
 
-Sans compose : `docker build -t wajitech . && docker run --rm -p 8080:80 wajitech`.
+Sans compose : `docker build -t wajitech . && docker run --rm -p 3080:80 wajitech`.
 
 **Coolify** : nouvelle ressource → dépôt Git → Build Pack « Dockerfile », port exposé `80`, domaine `wajitech.fr`.
