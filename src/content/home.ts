@@ -20,13 +20,14 @@ export const hero = {
   more: 'Découvrir →',
   stats: [
     { label: 'Structure', value: 'EURL · RC Pro' },
-    { label: 'Agrément', value: 'CII', seal: true },
+    { label: 'Expérience', value: '', years: true },
     { label: 'Localisation', value: 'Paris' },
     { label: 'Remote', value: 'Worldwide' },
   ],
 };
 
 export const clients = {
+  label: 'Missions',
   title: "Ils m'ont fait confiance",
   /** `logo` = nom de la classe CSS lg-* (voir sections.css) */
   items: [
@@ -42,10 +43,17 @@ export const clients = {
 };
 
 export const positioning = {
+  label: 'Validé par les ESN',
   title: "À l'aise partout où la technique rencontre l'humain.",
-  titleMuted: 'Chaque environnement a sa culture, ses outils et ses enjeux.',
-  referencedLabel: 'Référencement',
-  referenced: ['Comet', 'Crème de la Crème', 'Le Hibou', 'Talent.io', 'Easy Partner', 'Klanik'],
+  /** `logo` = classe CSS lg-* (voir sections.css) */
+  referenced: [
+    { name: 'Comet', logo: 'lg-comet' },
+    { name: 'Crème de la Crème', logo: 'lg-creme' },
+    { name: 'Le Hibou', logo: 'lg-hibou' },
+    { name: 'Talent.io', logo: 'lg-talentio' },
+    { name: 'Easy Partner', logo: 'lg-easypartner' },
+    { name: 'Klanik', logo: 'lg-klanik' },
+  ],
   pillars: [
     { n: '01', title: 'Adaptabilité', text: "Nouvelle stack, nouvelle équipe, nouvelle culture : une intégration rapide, quel que soit l'environnement." },
     { n: '02', title: 'Polyvalence', text: 'Du développement au pilotage technique, de la décision à l\'exécution. Un seul interlocuteur, plusieurs registres.' },
@@ -63,19 +71,19 @@ export const schools = {
 
 export const approach = {
   label: '02 · Approche',
-  before: 'Avant de coder, je prends le temps de ',
+  before: 'Prendre le temps de ',
   emphasis: 'comprendre',
-  after: ' le besoin.',
+  after: ' votre besoin.',
   more: "Un CTO, un responsable métier et un Comex n'ont pas besoin du même niveau de détail. L'explication s'adapte à la décision que chacun doit prendre.",
 };
 
 export const formats = {
-  label: '03 · Formats',
-  title: 'Des formats pour chaque besoin.',
+  label: '03 · Services',
+  title: 'Chaque environnement a sa culture, ses outils et ses enjeux.',
   items: [
     { n: '01', title: "Renfort d'équipe", text: 'Une compétence supplémentaire, opérationnelle rapidement.' },
-    { n: '02', title: 'Pilotage technique', text: "Cadrage, coordination et accompagnement d'équipe sur la durée d'un projet ou d'une transition." },
-    { n: '03', title: 'Audit & conseil', text: 'Un regard extérieur et structuré sur vos applications, vos choix ou votre organisation.' },
+    { n: '02', title: 'Encadrement', text: "Cadrage, coordination et accompagnement d'équipe sur la durée d'un projet ou d'une transition." },
+    { n: '03', title: 'Audit & conseil', text: 'Un regard extérieur et structuré sur vos applications, vos choix ou votre organisation. Avec un œil sur vos dépenses IT (serveurs, applications, tokens IA) pour les optimiser.' },
     { n: '04', title: 'Formation', text: 'Un accompagnement sur mesure pour faire monter vos équipes en compétence.' },
   ],
 };
@@ -89,7 +97,13 @@ export const setup = {
     { name: 'OpenRouter', icon: 'ti-openrouter' },
     { name: 'GitHub', icon: 'ti-github' },
   ],
-  stack: ['React', 'TypeScript', 'Vite', 'Bun', 'Node.js'],
+  stack: [
+    { name: 'React', icon: 'ti-react' },
+    { name: 'TypeScript', icon: 'ti-typescript' },
+    { name: 'Vite', icon: 'ti-vite' },
+    { name: 'Bun', icon: 'ti-bun' },
+    { name: 'Node.js', icon: 'ti-nodejs', iconOnly: true },
+  ],
 };
 
 export const method = {
@@ -106,7 +120,7 @@ export const faq = {
   label: '05 · Questions fréquentes',
   items: [
     { q: 'Travaillez-vous en direct ou via une ESN ?', a: 'Les deux, selon votre organisation.' },
-    { q: 'Quelle est votre structure ?', a: 'EURL de droit français, assurée en responsabilité civile professionnelle. Attestations sur demande. [À COMPLÉTER : SIREN, conditions de paiement]' },
+    { q: 'Quelle est votre structure ?', a: 'EURL de droit français, assurée en responsabilité civile professionnelle. Attestations sur demande.' },
     { q: 'Comment gérez-vous la confidentialité ?', a: 'Discrétion totale sur les contextes clients. NDA et politiques de sécurité appliqués dès le premier jour.' },
     { q: 'Quelle est votre disponibilité ?', open: true, a: 'Actuellement engagé sur une mission, avec une disponibilité à partir de 2028. Si votre besoin est plus proche, contactez-moi quand même : je peux vous orienter.' },
   ],
@@ -115,7 +129,7 @@ export const faq = {
 export const contact = {
   label: '06 · Contact',
   title: ['Un projet ?', 'Parlons-en.'],
-  mailCta: 'Écrire à contact@wajitech.fr',
+  mailCta: "Faire apparaître l'email",
   linkedinCta: 'LinkedIn',
   line: 'EURL française · RC Pro · Référencé auprès de plusieurs ESN · Paris & remote',
 };

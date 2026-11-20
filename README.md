@@ -14,6 +14,9 @@ npm run typecheck
 ## Modifier le contenu
 - `src/content/site.ts` : email, LinkedIn, navigation, palette (`terracotta` | `ocre`)
 - `src/content/home.ts` : tous les textes de l'accueil. `[À COMPLÉTER : …]` s'affiche en champ à remplir
+- Email : jamais en clair dans le HTML (XOR + bouton « afficher l'email », `src/client/mail.ts`). Il suffit de changer `site.email`
+- Expérience : calculée depuis `site.careerStart` (build + navigateur)
+- SEO / IA : JSON-LD dans `src/entry-server.tsx`, `public/llms.txt`, `robots.txt`, `sitemap.xml`, `og.png`
 - `src/content/legal.tsx` : mentions légales (les `<Ph>` sont à compléter)
 
 ## CSS (variables `--var`)

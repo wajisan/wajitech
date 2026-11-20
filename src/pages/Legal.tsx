@@ -26,6 +26,7 @@ export function Legal() {
               <section key={b.title} className="block">
                 <h2>{b.title}</h2>
                 <div className="txt">{b.paragraphs.map((p, i) => <p key={i}>{p}</p>)}</div>
+                {b.aside && <div className="block-aside">{b.aside}</div>}
               </section>
             ))}
           </div>

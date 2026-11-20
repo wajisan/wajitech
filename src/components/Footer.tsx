@@ -1,4 +1,5 @@
 import { Logo } from './Logo';
+import { MailReveal } from './MailReveal';
 import { site } from '../content/site';
 
 export function Footer() {
@@ -11,7 +12,7 @@ export function Footer() {
         </div>
         <div className="footer-links">
           <a className="foot-link" href={site.linkedin}>LinkedIn</a>
-          <a className="foot-link" href={`mailto:${site.email}`}>Email</a>
+          <MailReveal className="foot-link" label="Afficher l'email" />
           <a className="foot-link" href="/mentions-legales">Mentions légales</a>
         </div>
       </div>

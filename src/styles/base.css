@@ -83,7 +83,8 @@ ul, ol { padding: 0; list-style: none; }
 }
 @media (prefers-reduced-motion: no-preference) {
   .intro { animation: wj-in 0.9s var(--ease) both; }
-  .line { display: block; overflow: hidden; padding-bottom: 0.04em; }
+  /* marge haute compensée : l'accent de « équipe » ne doit pas être rogné par overflow:hidden */
+  .line { display: block; overflow: hidden; padding-block: 0.16em 0.04em; margin-top: -0.16em; }
   .line > span { display: block; animation: wj-rise 1s var(--ease) both; }
   .l2 > span { animation-delay: 0.08s; }
   .l3 > span { animation-delay: 0.16s; }
@@ -98,3 +99,16 @@ ul, ol { padding: 0; list-style: none; }
     .nav-inner { animation: wj-nav linear both; animation-timeline: scroll(nearest); animation-range: 0 160px; }
   }
 }
+
+/* Barre de défilement : fine, discrète, dorée (couleur d'accent du site) */
+html { scrollbar-width: thin; scrollbar-color: rgba(187, 144, 94, 0.55) transparent; }
+@supports not (scrollbar-color: auto) {
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(187, 144, 94, 0.55); border-radius: 999px; border: 2px solid var(--sand); }
+  ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+}
+
+/* Sélection de texte : doré doux sur fond clair, orange sur les bandes sombres */
+::selection { background: rgba(187, 144, 94, 0.38); color: var(--night); }
+.quote ::selection, .contact-card ::selection { background: rgba(217, 119, 87, 0.55); color: #fff; }

@@ -20,7 +20,9 @@
   --terracotta: #d97757;      /* accent, en aplat seulement */
   --terracotta-ink: #9c4426;  /* accent lisible en texte, focus, survols */
   --terracotta-deep: #8e4a30; /* bande « Approche » */
-  --ocre: #a8702a;            /* barre du logo uniquement */
+  --gold: #bb905e;            /* accent du site (logo, boutons, titres) */
+  --gold-ink: #7d5c33;        /* version lisible en texte, focus, survols */
+  --ocre: #bb905e;            /* barre du logo */
   --on-dark: #f7f2ea;
   --on-dark-soft: #d9cfc3;
   --on-dark-label: #b3a89c;
@@ -94,8 +96,8 @@
 /* Alias sémantiques : le site utilise --accent*, jamais la couleur brute.
    Changer de palette = changer ces trois lignes. */
 :root {
-  --accent: var(--terracotta);
-  --accent-ink: var(--terracotta-ink);
+  --accent: var(--gold);
+  --accent-ink: var(--gold-ink);
   --accent-deep: var(--terracotta-deep);
 }
 :root[data-palette="ocre"] {

@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
-import { site } from './site';
+import { MailReveal } from '../components/MailReveal';
 import { Ph } from '../components/Ph';
+import cii from '../assets/img/cii.webp';
 
 /** Contenu de la page Mentions légales. Les `<Ph>` sont les champs à compléter. */
 export const meta = {
@@ -14,32 +15,32 @@ export const head = {
   updated: 'Dernière mise à jour : novembre 2026',
 };
 
-const mail = <a className="link" href={`mailto:${site.email}`}>{site.email}</a>;
+const mail = <MailReveal className="link link-btn" label="afficher l'email" />;
 
-export const blocks: { title: string; paragraphs: ReactNode[] }[] = [
+export const blocks: { title: string; paragraphs: ReactNode[]; aside?: ReactNode }[] = [
   {
     title: 'Éditeur du site',
     paragraphs: [
-      <>Wajitech, EURL au capital de <Ph>capital</Ph> €.</>,
-      <>Siège social : <Ph>adresse complète</Ph>, Paris.</>,
-      <>RCS Paris <Ph>numéro</Ph> · SIREN <Ph /> · TVA intracommunautaire <Ph /></>,
+      <>Wajitech, EURL au capital social de 1 500,00 €.</>,
+      <>RCS Paris 907 755 136 (SIREN 907 755 136)</>,
       <>Contact : {mail}</>,
     ],
   },
   {
     title: 'Directeur de la publication',
-    paragraphs: [<><Ph>prénom et nom</Ph>, gérant de Wajitech.</>],
+    paragraphs: ['Wadi KIHEL, gérant de Wajitech.'],
   },
   {
     title: 'Hébergement',
-    paragraphs: [<Ph>nom de l'hébergeur du serveur</Ph>, <Ph>adresse et téléphone de l'hébergeur</Ph>],
+    paragraphs: ['Hostinger International Ltd.', '61 Lordou Vironos Street, 6023 Larnaca, Chypre. hostinger.fr'],
   },
   {
     title: 'Assurance et agrément',
     paragraphs: [
-      <>Wajitech est assurée en responsabilité civile professionnelle auprès de <Ph>nom de l'assureur</Ph>.</>,
+      'Wajitech est assurée en responsabilité civile professionnelle.',
       "Wajitech est agréée au titre du Crédit d'impôt innovation (CII).",
     ],
+    aside: <img src={cii} width={256} height={256} alt="Agrément Crédit d'impôt innovation" decoding="async" loading="lazy" />,
   },
   {
     title: 'Propriété intellectuelle',
@@ -58,7 +59,7 @@ export const blocks: { title: string; paragraphs: ReactNode[] }[] = [
   {
     title: 'Cookies',
     paragraphs: [
-      <>Ce site ne dépose aucun cookie publicitaire ni de mesure d'audience. <Ph>à modifier si un outil de statistiques est ajouté</Ph></>,
+      <>Ce site ne dépose aucun cookie publicitaire ni de mesure d'audience.</>,
     ],
   },
 ];

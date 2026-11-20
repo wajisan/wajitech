@@ -3,13 +3,13 @@ import { Nav } from '../components/Nav';
 import { Footer } from '../components/Footer';
 import { Decor } from '../components/Img';
 import { withPlaceholders } from '../components/Ph';
-import { site } from '../content/site';
+import { MailReveal } from '../components/MailReveal';
+import { site, experienceYears } from '../content/site';
 import * as c from '../content/home';
 
 import palmShadow from '../assets/img/palm-shadow.webp';
 import palmLight from '../assets/img/palm-filigrane.webp';
 import argile from '../assets/img/argile.webp';
-import cii from '../assets/img/cii.webp';
 
 export function Home() {
   return (
@@ -41,7 +41,7 @@ function Hero() {
       <div className="wrap hero-inner">
         <div className="hero-top intro">
           <p className="mono">{hero.eyebrow}</p>
-          <a className="dispo" href="#contact"><span className="dot-plan" />{hero.badge}</a>
+          <a className="dispo" href="#references"><span className="dot-plan" />{hero.badge}</a>
         </div>
         <h1 className="disp h-hero">
           {lines.map((l, i) => (
@@ -51,19 +51,15 @@ function Hero() {
         <div className="cols hero-lead-row">
           <p className="hero-sub lite intro i2">{hero.lead} <span className="mute">{hero.leadMuted}</span></p>
           <div className="hero-ctas intro i3">
-            <a className="btn btn-fill" href="#contact">{hero.cta}</a>
-            <a className="text-link" href="#references">{hero.more}</a>
+            <a className="btn btn-ghost" href="#clients">{hero.more}</a>
           </div>
         </div>
         <ul className="cols stats intro i4">
           {hero.stats.map((s) => (
             <li key={s.label} className="stat">
               <span className="mono">{s.label}</span>
-              {s.seal ? (
-                <span className="stat-cii">
-                  <span className="disp stat-v">{s.value}</span>
-                  <img src={cii} width={256} height={256} alt="Agrément Crédit d'impôt innovation" decoding="async" loading="lazy" />
-                </span>
+              {s.years ? (
+                <span className="disp stat-v" data-since={`${site.careerStart.year}-${site.careerStart.month}`}>{experienceYears()} ans+</span>
               ) : (
                 <span className="disp stat-v">{s.value}</span>
               )}
@@ -78,9 +74,10 @@ function Hero() {
 function Clients() {
   const { clients } = c;
   return (
-    <section aria-label="Principaux clients" className="clients-section">
+    <section id="clients" aria-label="Principaux clients" className="clients-section">
       <div className="wrap stack-y stack-y--tight">
         <div className="cols sec-head reveal">
+          <p className="mono label sec-label">{clients.label}</p>
           <h2 className="lite h-sec">{clients.title}<span className="acc">.</span></h2>
         </div>
         <ul className="clients">
@@ -101,11 +98,18 @@ function Positioning() {
     <section id="references" className="section" style={{ paddingBottom: 'clamp(88px, 9cqi, 144px)' }}>
       <div className="wrap stack-y">
         <div className="cols sec-head reveal">
-          <h2 className="lite h-sec">{p.title} <span className="mute">{p.titleMuted}</span></h2>
+          <p className="mono label sec-label">{p.label}</p>
+          <h2 className="lite h-sec">{p.title.replace(/\.$/, '')}<span className="acc">.</span></h2>
         </div>
         <div className="esn reveal">
-          <p className="mono label">{p.referencedLabel}</p>
-          <ul className="esn-list">{p.referenced.map((n) => <li key={n}>{n}</li>)}</ul>
+          <ul className="esn-list">
+            {p.referenced.map((e) => (
+              <li key={e.name} className="esn-item">
+                <span className="esn-logo"><span className={`client-logo ${e.logo}`} aria-hidden="true" /></span>
+                <span className="esn-name">{e.name}</span>
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="refs">
           {p.pillars.map((it, i) => (
@@ -164,7 +168,7 @@ function Formats() {
       <div className="wrap stack-y">
         <div className="cols sec-head reveal">
           <p className="mono label sec-label">{f.label}</p>
-          <h2 className="lite h-sec">{f.title}</h2>
+          <h2 className="lite h-sec">{f.title.replace(/\.$/, '')}<span className="acc">.</span></h2>
         </div>
         <div className="missions">
           {f.items.map((it, i) => (
@@ -211,7 +215,14 @@ function Setup() {
             <span className="mono">Stack</span>
             <div className="chain">
               {s.stack.map((t, i) => (
-                <span key={t} style={{ display: 'contents' }}>{i > 0 && <Plus />}<span className="tag">{t}</span></span>
+                <span key={t.name} style={{ display: 'contents' }}>
+                  {i > 0 && <Plus />}
+                  <span className="tool">
+                    {'iconOnly' in t
+                      ? <span className={`tool-ico ${t.icon}`} role="img" aria-label={t.name} />
+                      : <><span className={`tool-ico ${t.icon}`} aria-hidden="true" />{t.name}</>}
+                  </span>
+                </span>
               ))}
             </div>
           </div>
@@ -247,11 +258,11 @@ function Method() {
 function Faq() {
   const f = c.faq;
   return (
-    <section id="faq" className="section" style={{ paddingTop: 0 }}>
+    <section className="section" style={{ paddingTop: 0 }}>
       <div className="wrap stack-y">
         <div className="cols sec-head reveal">
           <p className="mono label" style={{ paddingTop: 27, alignSelf: 'start' }}>{f.label}</p>
-          <div className="faq">
+          <div id="faq" className="faq">
             {f.items.map((q) => (
               <details key={q.q} className="qa" open={'open' in q ? q.open : undefined}>
                 <summary>{q.q}</summary>
@@ -276,7 +287,7 @@ function Contact() {
             <p className="mono">{k.label}</p>
             <h2 className="disp h-contact">{k.title[0]}<br /><span className="acc">{k.title[1]}</span></h2>
             <div className="contact-ctas">
-              <a className="btn btn-fill btn-lg" href={`mailto:${site.email}`}>{k.mailCta}</a>
+              <MailReveal className="btn btn-fill btn-lg" label={k.mailCta} />
               <a className="btn btn-ghost-light btn-lg btn-linkedin" href={site.linkedin}><span className="in" aria-hidden="true">in</span>{k.linkedinCta}</a>
             </div>
             <p className="mono small">{k.line}</p>
