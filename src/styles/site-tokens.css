@@ -1,0 +1,15 @@
+/* Variables propres au site (hors design system) : valeurs d'usage local. */
+:root {
+  --live-green: #2f7a4a;                 /* pastille « disponible » */
+  --border: rgba(26, 26, 26, 0.14);      /* contours de pastilles, séparateurs de logos */
+  --border-strong: rgba(26, 26, 26, 0.2);
+  --border-dashed: rgba(26, 26, 26, 0.2);
+  --glass: rgba(247, 242, 234, 0.72);    /* verre dépoli de la nav */
+  --glass-solid: rgba(247, 242, 234, 0.95);
+  --hover-tint: rgba(26, 26, 26, 0.05);
+  --placeholder-ink: #7a3a20;
+  --placeholder-border: rgba(156, 68, 38, 0.45);
+  --on-dark-border: rgba(247, 242, 234, 0.16);
+  --on-dark-line: rgba(247, 242, 234, 0.3);
+  --on-dark-input: #8f857a;
+}

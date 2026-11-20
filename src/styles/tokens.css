@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Wajitech design system : tokens
+   Source de vérité : le design system (tokens.json). Ce fichier est volontairement
+   autonome : il pourra être servi tel quel depuis design.wajitech.fr/tokens.css
+   et remplacé ici par un <link> ou un @import, sans toucher au reste du site.
+   Les tailles fluides utilisent cqi : elles s'adaptent au conteneur `.wj`.
+   ========================================================================== */
+
+:root {
+  /* ---------- Couleurs : thème Sable (clair uniquement) ---------- */
+  --sand: #ede4d8;            /* fond de page */
+  --sand-raised: #f7f2ea;     /* cartes claires, pastilles, nav */
+  --night: #1a1a1a;           /* encre, fond des cartes sombres */
+  --text-strong: #2a2622;     /* paragraphes longs, 11.9:1 */
+  --text-body: #3a3530;       /* texte de carte, nav, 9.6:1 */
+  --text-secondary: #4a443e;  /* sous-textes, 7.6:1 */
+  --text-label: #5e5750;      /* labels mono, 5.6:1 */
+  --text-muted: #645a51;      /* 2e phrase des titres en deux tons, 5.3:1 */
+  --logo-mono: #6e645b;       /* logos tiers, grands éléments seulement */
+  --terracotta: #d97757;      /* accent, en aplat seulement */
+  --terracotta-ink: #9c4426;  /* accent lisible en texte, focus, survols */
+  --terracotta-deep: #8e4a30; /* bande « Approche » */
+  --ocre: #a8702a;            /* barre du logo uniquement */
+  --on-dark: #f7f2ea;
+  --on-dark-soft: #d9cfc3;
+  --on-dark-label: #b3a89c;
+  --on-deep-soft: #f2ddcb;
+  --on-deep-accent: #f6d2b6;
+  --hairline: rgba(26, 26, 26, 0.16);
+  --hairline-soft: rgba(26, 26, 26, 0.08);
+  --grid-line: rgba(26, 26, 26, 0.075);
+  --placeholder-bg: rgba(217, 119, 87, 0.14);
+
+  /* Variante « ocre dominant » (activée par <html data-palette="ocre">) */
+  --ocre-accent: #c9963f;
+  --ocre-ink: #8a5a17;
+  --ocre-deep: #7a5320;
+
+  /* ---------- Typographie ---------- */
+  --font-display: Archivo, "Arial Narrow", sans-serif;
+  --font-text: "Inter Tight", Inter, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-logo: "Space Grotesk", sans-serif;
+
+  /* Tailles fluides (cqi = % de la largeur du conteneur .wj) */
+  --fs-hero: clamp(46px, 10.4cqi, 160px);
+  --fs-contact: clamp(52px, 9.6cqi, 150px);
+  --fs-section: clamp(34px, 4.4cqi, 64px);
+  --fs-display-l: clamp(40px, 4.2cqi, 64px);
+  --fs-display-m: clamp(34px, 3.4cqi, 52px);
+  --fs-display-s: 40px;
+  --fs-number: clamp(88px, 9cqi, 140px);
+  --fs-quote: clamp(36px, 4.8cqi, 72px);
+  --fs-lead: clamp(21px, 2cqi, 28px);
+  --fs-body-l: 20px;
+  --fs-body: 17px;
+  --fs-body-s: 15px;
+  --fs-button: 16px;
+  --fs-label: 12px;
+  --fs-tag: 12.5px;
+
+  /* ---------- Espacement ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-14: 56px;
+  --space-24: 96px;
+  --space-section: clamp(112px, 13cqi, 208px);
+  --page-gutter: clamp(20px, 4cqi, 64px);
+  --page-max: 1360px;
+  --grid-gap: clamp(16px, 2cqi, 32px);
+
+  /* ---------- Rayons ---------- */
+  --radius-xs: 6px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+  --radius-arch: 999px 999px 24px 24px;
+
+  /* ---------- Ombres ---------- */
+  --shadow-card-hover: 0 30px 60px -36px rgba(122, 62, 30, 0.45);
+  --shadow-image: 0 40px 70px -40px rgba(0, 0, 0, 0.6);
+
+  /* ---------- Mouvement ---------- */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-fast: 0.3s;
+  --dur-base: 0.45s;
+}
+
+/* Alias sémantiques : le site utilise --accent*, jamais la couleur brute.
+   Changer de palette = changer ces trois lignes. */
+:root {
+  --accent: var(--terracotta);
+  --accent-ink: var(--terracotta-ink);
+  --accent-deep: var(--terracotta-deep);
+}
+:root[data-palette="ocre"] {
+  --accent: var(--ocre-accent);
+  --accent-ink: var(--ocre-ink);
+  --accent-deep: var(--ocre-deep);
+}

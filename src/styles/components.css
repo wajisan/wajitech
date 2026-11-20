@@ -1,0 +1,87 @@
+/* Composants réutilisables : navigation, boutons, pastilles, cartes, logo. */
+
+/* ---------- Navigation ---------- */
+.nav { position: sticky; top: 0; z-index: 50; padding: 14px clamp(12px, 2.4cqi, 32px) 0; }
+.nav-inner {
+  max-width: var(--page-max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  padding: 10px 10px 10px 22px; border-radius: var(--radius-pill); border: 1px solid var(--hairline-soft);
+  background: var(--glass); backdrop-filter: blur(16px) saturate(1.2); -webkit-backdrop-filter: blur(16px) saturate(1.2);
+}
+.nav-links { display: flex; align-items: center; gap: 6px; }
+.nav-link {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: var(--radius-pill);
+  font-size: 15px; font-weight: 500; color: var(--text-body); transition: background var(--dur-fast) ease, color var(--dur-fast) ease;
+}
+.nav-link:hover { background: var(--hover-tint); color: var(--night); }
+.burger {
+  display: none; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(26, 26, 26, 0.12);
+  background: var(--sand-raised); align-items: center; justify-content: center; cursor: pointer; color: var(--night); padding: 0;
+}
+.burger .i-close, .burger[aria-expanded="true"] .i-open { display: none; }
+.burger[aria-expanded="true"] .i-close { display: block; }
+.mobile-menu {
+  display: none; flex-direction: column; gap: 4px; max-width: var(--page-max); margin: 10px auto 0; padding: 12px;
+  border-radius: 28px; background: var(--glass-solid); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--hairline-soft);
+}
+.mobile-menu .nav-link { min-height: 52px; font-size: 20px; }
+.mobile-menu .btn { margin-top: 8px; }
+.mobile-menu:not([hidden]) { display: flex; }
+
+/* ---------- Logo ---------- */
+.logo { display: flex; align-items: center; gap: 10px; min-height: 44px; }
+.logo-word { font-family: var(--font-logo); font-weight: 600; font-size: 24px; letter-spacing: -0.045em; line-height: 1; }
+.logo--sm { gap: 9px; }
+.logo--sm .logo-word { font-size: 20px; }
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 26px;
+  border-radius: var(--radius-pill); border: 1px solid transparent; font-weight: 500; font-size: var(--fs-button); letter-spacing: -0.01em; cursor: pointer;
+  transition: transform 0.35s var(--ease), background 0.35s ease, border-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
+}
+.btn-fill { background: var(--accent); color: var(--night); }
+.btn-fill:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -18px var(--accent); }
+.btn-ghost { background: transparent; color: var(--night); border-color: var(--border-strong); }
+.btn-ghost:hover { border-color: var(--night); }
+.btn-ghost-light { background: transparent; color: var(--on-dark); border-color: rgba(247, 242, 234, 0.25); }
+.btn-ghost-light:hover { border-color: var(--on-dark); }
+.btn-sm { min-height: 44px; padding: 0 20px; font-size: 14px; }
+.btn-lg { min-height: 60px; padding: 0 32px; font-size: 18px; }
+.btn-linkedin { gap: 12px; }
+.btn-linkedin .in {
+  display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 5px;
+  background: var(--sand-raised); color: var(--night); font-weight: 700; font-size: 13px; letter-spacing: -0.02em;
+}
+.text-link {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-weight: 500; font-size: var(--fs-button); color: var(--night);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.3); transition: color var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+.text-link:hover { color: var(--accent-ink); border-color: var(--accent-ink); }
+
+/* ---------- Pastilles ---------- */
+.dispo {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 14px; border-radius: var(--radius-pill);
+  background: rgba(247, 242, 234, 0.7); border: 1px solid var(--hairline-soft); font-size: 14px; font-weight: 500; transition: border-color var(--dur-fast) ease;
+}
+.dispo:hover { border-color: var(--accent-ink); }
+.dot-plan { width: 8px; height: 8px; border-radius: 2px; transform: rotate(45deg); background: var(--accent); flex: none; }
+.tag {
+  display: inline-flex; align-items: center; min-height: 36px; padding: 0 16px; border-radius: var(--radius-pill);
+  font-family: var(--font-mono); font-size: var(--fs-tag); color: var(--text-body); background: var(--sand-raised); border: 1px solid var(--border);
+}
+.plus { font-family: var(--font-mono); font-size: 14px; color: var(--accent-ink); }
+
+/* ---------- Cartes ---------- */
+.card {
+  position: relative; overflow: hidden; min-height: 340px; background: var(--sand-raised); border: 1px solid rgba(26, 26, 26, 0.07);
+  border-radius: var(--radius-lg); padding: 32px; display: flex; flex-direction: column; justify-content: space-between; gap: 40px;
+  transition: transform var(--dur-base) var(--ease), box-shadow var(--dur-base) ease, border-color var(--dur-base) ease;
+}
+.card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: var(--shadow-card-hover); }
+.card-palm { position: absolute; pointer-events: none; max-width: none; transition: transform 1s var(--ease); }
+.card:hover .card-palm { transform: rotate(-7deg) translate(-12px, 8px); }
+.card-top { position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; }
+.card-body { position: relative; display: flex; flex-direction: column; gap: 14px; }
+.card-name { font-size: 52px; }
+.fact { font-size: 16px; color: var(--text-body); }
+.role { font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-label); }
